@@ -39,14 +39,9 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   justify-content: space-between; 
 }
 .nav.show { right: 0; }
-.overlay { z-index: 99; } /* LOW */
-.nav { z-index: 100; }    /* MID */
-.close-menu { 
-  position: fixed; 
-  top: 1.5rem; right: 1rem; 
-  z-index: 101; /* HIGH */
-
-}
+.overlay { z-index: 99; }
+.nav { z-index: 100; }
+.close-menu { position: fixed; top: 1.5rem; right: 1rem; z-index: 101; }
 
 .nav-links { display: flex; flex-direction: column; gap: 1.5rem; }
 .nav-link { color: var(--medium-gray); position: relative; }

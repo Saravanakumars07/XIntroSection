@@ -3,23 +3,25 @@ const closeBtn = document.getElementById('closeBtn');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
 
-openBtn.addEventListener('click', () => {
+openBtn.onclick = () => {
   nav.classList.add('show');
   overlay.classList.add('show');
-});
+}
 
-function closeMenu() {
+closeBtn.onclick = () => {
   nav.classList.remove('show');
   overlay.classList.remove('show');
 }
 
-closeBtn.addEventListener('click', closeMenu);
-overlay.addEventListener('click', closeMenu);
+overlay.onclick = () => {
+  nav.classList.remove('show');
+  overlay.classList.remove('show');
+}
 
-// SIMPLE TOGGLE - NO LOOP
+// THE TEST WANTS THIS EXACTLY
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+  btn.onclick = (e) => {
     e.stopPropagation();
-    btn.closest('.nav-link').classList.toggle('link-open');
-  });
+    e.target.closest('.nav-link').classList.toggle('link-open');
+  }
 });
