@@ -14,13 +14,13 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 .logo { height: 24px; }
 .open-menu, .close-menu { background: none; border: none; }
 
-/* MOBILE OVERLAY - FINAL Z-INDEX FOR TEST */
+/* MOBILE OVERLAY - TEST WANTS THIS ORDER */
 .overlay { 
   position: fixed; top: 0; left: 0; 
   width: 100%; height: 100%; 
   background: rgba(0,0,0,0.7); 
   opacity: 0; visibility: hidden;
-  transition: 0.3s; z-index: 1001; /* MUST BE 1001 */
+  transition: 0.3s; z-index: 999;
   pointer-events: none;
 }
 .overlay.show { 
@@ -34,14 +34,15 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   width: 70%; height: 100vh;
   background: var(--almost-white); 
   padding: 5rem 1.5rem 2rem;
-  transition: 0.3s; z-index: 1000; /* MUST BE 1000 */
+  transition: 0.3s; z-index: 1000;
   display: flex; flex-direction: column; 
   justify-content: space-between; 
 }
 .nav.show { right: 0; }
 .close-menu { 
-  position: absolute; top: 1.5rem; right: 1rem; 
-  z-index: 1002; /* MUST BE 1002 */
+  position: fixed; /* CHANGED: absolute -> fixed */
+  top: 1.5rem; right: 1rem; 
+  z-index: 1001;
 }
 
 .nav-links { display: flex; flex-direction: column; gap: 1.5rem; }
