@@ -20,11 +20,11 @@ openBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
 
-// Dropdown toggle
+// Dropdown toggle - ONLY 1 VERSION
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    e.preventDefault(); // ADD THIS
+    e.preventDefault();
     const navLink = btn.closest('.nav-link');
     
     document.querySelectorAll('.nav-link').forEach(link => {
