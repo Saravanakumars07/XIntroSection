@@ -24,7 +24,13 @@ overlay.addEventListener('click', closeMenu);
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
+    e.preventDefault(); // ADD THIS
     const navLink = btn.closest('.nav-link');
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if(link !== navLink) link.classList.remove('link-open');
+    });
+    
     navLink.classList.toggle('link-open');
   });
 });
