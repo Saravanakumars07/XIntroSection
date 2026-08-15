@@ -2,8 +2,8 @@ const openBtn = document.getElementById('openBtn');
 const closeBtn = document.getElementById('closeBtn');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
-const dropdowns = document.querySelectorAll('.nav-link');
 
+// Mobile menu
 openBtn.addEventListener('click', () => {
   nav.classList.add('show');
   overlay.classList.add('show');
@@ -19,12 +19,11 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
 });
 
-// Dropdown toggle - adds link-open class
-dropdowns.forEach(dropdown => {
-  const btn = dropdown.querySelector('.dropdown-btn');
-  if(btn) {
-    btn.addEventListener('click', () => {
-      dropdown.classList.toggle('link-open');
-    });
-  }
-});                     
+// Dropdown toggle - Test 3 Fix
+document.querySelectorAll('.dropdown-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent closing mobile menu
+    const parent = btn.closest('.nav-link');
+    parent.classList.toggle('link-open');
+  });
+});

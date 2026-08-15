@@ -20,16 +20,21 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   width: 100%; height: 100%; 
   background: rgba(0,0,0,0.7); 
   opacity: 0; visibility: hidden;
-  transition: 0.3s; z-index: 998;
+  transition: 0.3s; z-index: 1000; /* HIGHER than nav */
+  pointer-events: none; /* allow clicks through when hidden */
 }
-.overlay.show { opacity: 1; visibility: visible; }
+.overlay.show { 
+  opacity: 1; 
+  visibility: visible; 
+  pointer-events: all; /* enable clicks when shown */
+}
 
 .nav {
   position: fixed; top: 0; right: -70%;
   width: 70%; height: 100vh;
   background: var(--almost-white); 
   padding: 5rem 1.5rem 2rem;
-  transition: 0.3s; z-index: 999;
+  transition: 0.3s; z-index: 999; /* LOWER than overlay */
   display: flex; flex-direction: column; 
   justify-content: space-between; 
 }
