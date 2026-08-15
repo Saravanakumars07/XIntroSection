@@ -14,19 +14,19 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 .logo { height: 24px; }
 .open-menu, .close-menu { background: none; border: none; }
 
-/* MOBILE OVERLAY - Test 2 Fix */
+/* MOBILE OVERLAY - FIXED Z-INDEX */
 .overlay { 
   position: fixed; top: 0; left: 0; 
   width: 100%; height: 100%; 
   background: rgba(0,0,0,0.7); 
   opacity: 0; visibility: hidden;
-  transition: 0.3s; z-index: 1000; /* HIGHER than nav */
-  pointer-events: none; /* allow clicks through when hidden */
+  transition: 0.3s; z-index: 998; /* 998 = under nav */
+  pointer-events: none;
 }
 .overlay.show { 
   opacity: 1; 
   visibility: visible; 
-  pointer-events: all; /* enable clicks when shown */
+  pointer-events: all;
 }
 
 .nav {
@@ -34,12 +34,15 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   width: 70%; height: 100vh;
   background: var(--almost-white); 
   padding: 5rem 1.5rem 2rem;
-  transition: 0.3s; z-index: 999; /* LOWER than overlay */
+  transition: 0.3s; z-index: 999; /* 999 = over overlay */
   display: flex; flex-direction: column; 
   justify-content: space-between; 
 }
 .nav.show { right: 0; }
-.close-menu { position: absolute; top: 1.5rem; right: 1rem; }
+.close-menu { 
+  position: absolute; top: 1.5rem; right: 1rem; 
+  z-index: 1000; /* 1000 = over everything */
+}
 
 .nav-links { display: flex; flex-direction: column; gap: 1.5rem; }
 .nav-link { color: var(--medium-gray); position: relative; }
@@ -94,7 +97,7 @@ main { display: flex; flex-direction: column; text-align: center; padding: 1rem;
 .clients img { height: 18px; }
 .attribution { text-align: center; padding: 1rem; font-size: 0.8rem; }
 
-/* DESKTOP */
+/* DESKTOP - REMOVED DUPLICATE RULES */
 @media (min-width: 768px) {
   .header { padding: 2rem 2.5rem; justify-content: flex-start; gap: 3rem; }
   .open-menu, .close-menu, .overlay { display: none; }
@@ -103,6 +106,7 @@ main { display: flex; flex-direction: column; text-align: center; padding: 1rem;
     position: static; right: auto; width: auto; height: auto;
     background: transparent; padding: 0; flex-direction: row;
     gap: 2rem; flex: 1;
+    z-index: auto; /* reset for desktop */
   }
   .nav-links { flex-direction: row; gap: 2.5rem; }
 

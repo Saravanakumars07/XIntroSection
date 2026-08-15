@@ -3,7 +3,7 @@ const closeBtn = document.getElementById('closeBtn');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
 
-// Mobile menu
+// Mobile menu open/close
 openBtn.addEventListener('click', () => {
   nav.classList.add('show');
   overlay.classList.add('show');
@@ -19,11 +19,18 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
 });
 
-// Dropdown toggle - Test 3 Fix
+// Dropdown toggle - ONLY 1 VERSION OF THIS
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation(); // prevent closing mobile menu
-    const parent = btn.closest('.nav-link');
-    parent.classList.toggle('link-open');
+    const navLink = btn.closest('.nav-link');
+    
+    // close other dropdowns first
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if(link !== navLink) link.classList.remove('link-open');
+    });
+    
+    // toggle this one
+    navLink.classList.toggle('link-open');
   });
 });
