@@ -11,33 +11,35 @@
   <header class="header">
     <img src="./assets/images/logo.svg" alt="snap's logo" class="logo"/>
 
-    <button class="open-menu"><img src="./assets/images/icon-menu.svg" alt="open menu"></button>
+    <button class="open-menu" id="openBtn"><img src="./assets/images/icon-menu.svg" alt="open menu"></button>
 
-    <nav class="nav">
-      <button class="close-menu"><img src="./assets/images/icon-close-menu.svg" alt="close menu"></button>
+    <nav class="nav" id="nav">
+      <button class="close-menu" id="closeBtn"><img src="./assets/images/icon-close-menu.svg" alt="close menu"></button>
 
       <div class="nav-links">
-        <div class="nav-link">
+        <!-- FEATURES -->
+        <div class="nav-link" id="features">
           <button class="dropdown-btn">
             Features <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow" />
           </button>
-          <ul class="dropdown-list">
-            <li><a href="#" aria-label="todo-list"><img src="./assets/images/icon-todo.svg" alt="" />Todo List</a></li>
-            <li><a href="#"><img src="./assets/images/icon-calendar.svg" alt="" />Calendar</a></li>
-            <li><a href="#"><img src="./assets/images/icon-reminders.svg" alt="" />Reminders</a></li>
-            <li><a href="#"><img src="./assets/images/icon-planning.svg" alt="" />Planning</a></li>
-          </ul>
+          <div class="dropdown">
+            <div class="dropdown-link"><a href="#" aria-label="todo-list"><img src="./assets/images/icon-todo.svg" alt="" />Todo List</a></div>
+            <div class="dropdown-link"><a href="#"><img src="./assets/images/icon-calendar.svg" alt="" />Calendar</a></div>
+            <div class="dropdown-link"><a href="#"><img src="./assets/images/icon-reminders.svg" alt="" />Reminders</a></div>
+            <div class="dropdown-link"><a href="#"><img src="./assets/images/icon-planning.svg" alt="" />Planning</a></div>
+          </div>
         </div>
 
-        <div class="nav-link">
+        <!-- COMPANY -->
+        <div class="nav-link" id="company">
           <button class="dropdown-btn">
             Company <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow" />
           </button>
-          <ul class="dropdown-list">
-            <li><a href="#">History</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
+          <div class="dropdown">
+            <div class="dropdown-link"><a href="#">History</a></div>
+            <div class="dropdown-link"><a href="#">Our Team</a></div>
+            <div class="dropdown-link"><a href="#">Blog</a></div>
+          </div>
         </div>
 
         <a href="#" class="nav-link">Careers</a>
@@ -50,7 +52,7 @@
       </div>
     </nav>
 
-    <div class="overlay"></div> 
+    <div class="overlay" id="overlay"></div> 
   </header>
 
   <main>
@@ -78,7 +80,6 @@
       Challenge by <a href="https://crio.do" target="_blank" rel="noreferrer">Crio.do</a>. Coded by You
     </div>
   </footer>
-
 
   <script src="script.js"></script>
 </body>
