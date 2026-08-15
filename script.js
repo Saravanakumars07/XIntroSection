@@ -3,6 +3,10 @@ const closeMenu = document.querySelector('.close-menu');
 const nav = document.querySelector('.nav');
 const overlay = document.querySelector('.overlay');
 
+beforeEach(() => {
+  cy.visit('https://xintro-section-jqmr.vercel.app/')
+})
+
 openMenu.addEventListener('click', () => {
   nav.classList.add('show');
   overlay.classList.add('show');
