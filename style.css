@@ -61,19 +61,27 @@ button { cursor: pointer;
 }
 .nav.show { right: 0; }
 
-.close-menu {
-  display: none;
-  position: absolute;
+.nav-link.link-open > .dropdown-btn { 
+  color: var(--almost-black); 
+  font-weight: 700; 
+}
+.nav-link.link-open .arrow { 
+  transform: rotate(180deg); 
+}
+.nav-link.link-open .dropdown { 
+  display: flex; 
+}
+
+.close-menu { 
+  display: none; 
+  position: absolute; 
   top: 1.5rem; 
   right: 1.5rem; 
-  z-index: 1001;
+  z-index: 1001; 
 }
-.nav {
-  padding: 5rem 1.5rem 2rem; 
-}
-.nav.show .close-menu { display: block; }
 .nav.show .close-menu { 
   display: block; 
+
 }
 .nav-links { 
   display: flex; 

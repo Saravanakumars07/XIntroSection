@@ -4,26 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const overlay = document.getElementById('overlay');
 
-  const closeNav = () => {
+  // Open menu
+  openBtn.addEventListener('click', () => {
+    nav.classList.add('show');
+    overlay.classList.add('show');
+  });
+
+  // Close menu
+  function closeMenu() {
     nav.classList.remove('show');
     overlay.classList.remove('show');
   }
+  
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 
-  const openNav = () => {
-    nav.classList.add('show');
-    overlay.classList.add('show');
-  }
-
-  openBtn.addEventListener('click', openNav);
-  closeBtn.addEventListener('click', closeNav);
-  overlay.addEventListener('click', closeNav);
-
-  // DROPDOWN - BULLETPROOF FOR CRIO
-  const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-  dropdownBtns.forEach(button => {
-    button.addEventListener('click', () => {
-      const navLink = button.parentElement;
-      navLink.classList.toggle('link-open');
+  // DROPDOWN FOR CRIO TEST
+  document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // important so it doesn't close menu
+      button.parentElement.classList.toggle('link-open');
     });
   });
 });
