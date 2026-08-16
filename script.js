@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.addEventListener('click', closeNav);
 
   // DROPDOWN - BULLETPROOF FOR CRIO
-  document.querySelectorAll('.dropdown-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      this.parentElement.classList.toggle('link-open');
+  const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+  dropdownBtns.forEach(button => {
+    button.addEventListener('click', () => {
+      const navLink = button.parentElement;
+      navLink.classList.toggle('link-open');
     });
   });
 });
