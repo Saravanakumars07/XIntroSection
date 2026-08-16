@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       btn.closest('.nav-link').classList.toggle('link-open'); // KEEP ONLY THIS ONE
+       const navLink = btn.parentElement; // .nav-link
+    navLink.classList.toggle('link-open'); // ONLY ONCE
     });
   });
 });
