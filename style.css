@@ -88,11 +88,12 @@ button {
   flex-direction:column;
   justify-content:space-between;
 }
-.close-menu{
-  position:fixed;
-  top:1.5rem;
-  right:1rem;
-  z-index:101;
+.overlay { z-index: 99; } /* LOW */
+.nav { z-index: 100; }    /* MID */
+.close-menu { 
+  position: fixed; 
+  top: 1.5rem; right: 1rem; 
+  z-index: 101; /* HIGH */
 }
 
 .nav-links { 
