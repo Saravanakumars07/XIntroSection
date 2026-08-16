@@ -20,7 +20,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   background: rgba(0,0,0,0.7);
   opacity: 0; visibility: hidden;
   transition: 0.3s; 
-  z-index: 1000; 
+  z-index: 998; 
   pointer-events: none;
 }
 .overlay.show { opacity: 1; visibility: visible; pointer-events: all; }
@@ -39,9 +39,9 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 
 .close-menu { 
   display: none; 
-  position: absolute; 
+  position: fixed; 
   top: 1.5rem; right: 1.5rem; 
-  z-index: 1001; 
+  z-index: 1000; 
 }
 .nav.show .close-menu { display: block; }
 
