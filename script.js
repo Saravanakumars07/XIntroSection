@@ -1,29 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const openBtn = document.getElementById('openBtn');
-  const closeBtn = document.getElementById('closeBtn');
   const nav = document.getElementById('nav');
   const overlay = document.getElementById('overlay');
 
-  // Open menu
-  openBtn.addEventListener('click', () => {
+  document.getElementById('openBtn').onclick = () => {
     nav.classList.add('show');
     overlay.classList.add('show');
-  });
+  }
 
-  // Close menu
-  function closeMenu() {
+  const closeMenu = () => {
     nav.classList.remove('show');
     overlay.classList.remove('show');
+    // Also close all dropdowns when menu closes
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('link-open'));
   }
   
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
+  document.getElementById('closeBtn').onclick = closeMenu;
+  overlay.onclick = closeMenu;
 
-  // DROPDOWN FOR CRIO TEST
-  document.querySelectorAll('.dropdown-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation(); // important so it doesn't close menu
-      button.parentElement.classList.toggle('link-open');
-    });
-  });
-});
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('link-open');
+    }
+  })
+})
