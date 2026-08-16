@@ -91,4 +91,4 @@ main { display: flex; flex-direction: column; text-align: center; padding: 1rem;
   main { flex-direction: row-reverse; text-align: left; max-width: 1200px; margin: 0 auto; padding: 2rem 2.5rem; gap: 5rem; align-items: center; }
   .text-content h1 { font-size: 4rem; }
   .clients img { height: 20px; }
-}
+}   
