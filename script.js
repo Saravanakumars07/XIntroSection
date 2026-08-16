@@ -19,9 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      btn.closest('.nav-link').classList.toggle('link-open'); // KEEP ONLY THIS ONE
-       const navLink = btn.parentElement; // .nav-link
-    navLink.classList.toggle('link-open'); // ONLY ONCE
+      btn.closest('.nav-link').classList.toggle('link-open');
     });
   });
 });
