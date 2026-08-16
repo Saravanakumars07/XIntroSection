@@ -5,28 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('closeBtn');
   const dropdownBtns = document.querySelectorAll('.dropdown-btn');
 
-  // 1) Open/Close mobile menu
+  // Open mobile menu
   openBtn.addEventListener('click', () => {
     nav.classList.add('show');
     overlay.classList.add('show');
   });
 
+  // Close mobile menu + close dropdowns
   const closeMenu = () => {
     nav.classList.remove('show');
     overlay.classList.remove('show');
-    // close all dropdowns when menu closes
     document.querySelectorAll('.nav-link.link-open').forEach(l => l.classList.remove('link-open'));
   };
   
   closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
 
-  // 2) Open/Close dropdowns - ONLY 1 LISTENER
+  // Toggle dropdowns
   dropdownBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // don't close menu when clicking dropdown
+      e.preventDefault(); // Crio tests need this
       const parentNavLink = btn.closest('.nav-link'); 
-      parentNavLink.classList.toggle('link-open'); // TOGGLE ONLY ONCE
+      
+      // Close other open dropdowns first
+      document.querySelectorAll('.nav-link.link-open').forEach(l => {
+        if(l !== parentNavLink) l.classList.remove('link-open');
+      });
+
+      parentNavLink.classList.toggle('link-open');
     });
   });
 });
