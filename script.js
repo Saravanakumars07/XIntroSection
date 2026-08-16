@@ -2,25 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const overlay = document.getElementById('overlay');
 
-  document.getElementById('openBtn').onclick = () => {
+  document.getElementById('openBtn').addEventListener('click', () => {
     nav.classList.add('show');
     overlay.classList.add('show');
-  }
+  });
 
   const closeMenu = () => {
     nav.classList.remove('show');
     overlay.classList.remove('show');
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('link-open'));
-  }
+    document.querySelectorAll('.nav-link.link-open').forEach(l => l.classList.remove('link-open'));
+  };
   
-  document.getElementById('closeBtn').onclick = closeMenu;
-  overlay.onclick = closeMenu;
+  document.getElementById('closeBtn').addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const parentLink = btn.closest('.nav-link');
-      parentLink.classList.toggle('link-open'); 
+      const parent = btn.parentElement; // .nav-link
+      parent.classList.toggle('link-open'); // FIX 2: TOGGLE CLASS
     });
   });
-})
+});
