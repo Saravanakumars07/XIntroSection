@@ -20,7 +20,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   background: rgba(0,0,0,0.7);
   opacity: 0; visibility: hidden;
   transition: 0.3s; 
-  z-index: 998; 
+  z-index: 1000; 
   pointer-events: none;
 }
 .overlay.show { opacity: 1; visibility: visible; pointer-events: all; }
@@ -31,7 +31,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   background: var(--almost-white);
   padding: 5rem 1.5rem 2rem;
   transition: 0.3s;
-  z-index: 999; 
+  z-index: 998; 
   display: flex; flex-direction: column; 
   justify-content: space-between; 
 }
@@ -41,7 +41,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   display: none; 
   position: absolute; 
   top: 1.5rem; right: 1.5rem; 
-  z-index: 1000; 
+  z-index: 1001; 
 }
 .nav.show .close-menu { display: block; }
 
