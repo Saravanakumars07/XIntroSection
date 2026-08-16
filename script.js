@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      btn.closest('.nav-link').classList.toggle('link-open'); // ONLY 1 TOGGLE
+      btn.closest('.nav-link').classList.toggle('link-open');
     });
   });
 });
