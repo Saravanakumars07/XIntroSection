@@ -17,14 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.onclick = closeMenu;
 
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
-    btn.onclick = function(e) {
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      // close other dropdowns first
-      document.querySelectorAll('.nav-link').forEach(link => {
-        if(link !== this.parentElement) link.classList.remove('link-open');
-      });
-      // toggle this one
-      this.parentElement.classList.toggle('link-open');
-    }
-  })
+      btn.closest('.nav-link').classList.toggle('link-open');
+    });
+  });
 })
