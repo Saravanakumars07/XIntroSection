@@ -1,36 +1,29 @@
-const openBtn = document.getElementById('openBtn');
-const closeBtn = document.getElementById('closeBtn');
-const nav = document.getElementById('nav');
-const overlay = document.getElementById('overlay');
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.getElementById('openBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const nav = document.getElementById('nav');
+  const overlay = document.getElementById('overlay');
 
-// Mobile menu open/close
-openBtn.addEventListener('click', () => {
-  nav.classList.add('show');
-  overlay.classList.add('show');
-});
+  const closeNav = () => {
+    nav.classList.remove('show');
+    overlay.classList.remove('show');
+  }
 
-closeBtn.addEventListener('click', () => {
-  nav.classList.remove('show');
-  overlay.classList.remove('show');
-});
+  const openNav = () => {
+    nav.classList.add('show');
+    overlay.classList.add('show');
+  }
 
-overlay.addEventListener('click', () => {
-  nav.classList.remove('show');
-  overlay.classList.remove('show');
-});
+  openBtn.addEventListener('click', openNav);
+  closeBtn.addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
 
-// Dropdown toggle - ONLY 1 VERSION OF THIS
-document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // prevent closing mobile menu
-    const navLink = btn.closest('.nav-link');
-    
-    // close other dropdowns first
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if(link !== navLink) link.classList.remove('link-open');
+  // DROPDOWN - BULLETPROOF FOR CRIO
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.parentElement.classList.toggle('link-open');
     });
-    
-    // toggle this one
-    navLink.classList.toggle('link-open');
   });
 });
