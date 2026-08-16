@@ -8,47 +8,101 @@
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <img src="./assets/images/logo.svg" alt="snap's logo" class="logo"/>
-    <button class="open-menu" id="openBtn" aria-label="open menu">
-      <img src="./assets/images/icon-menu.svg" alt="">
+ <header class="header">
+  <img src="./assets/images/logo.svg" alt="snap's logo" class="logo"/>
+
+  <button class="open-menu" id="openBtn" aria-label="open menu">
+    <img src="./assets/images/icon-menu.svg" alt="">
+  </button>
+
+  <nav class="nav" id="nav">
+
+    <button class="close-menu" id="closeBtn" aria-label="close menu">
+      <img src="./assets/images/icon-close-menu.svg" alt="">
     </button>
-    <nav class="nav" id="nav">
-      <button class="close-menu" id="closeBtn" aria-label="close menu">
-        <img src="./assets/images/icon-close-menu.svg" alt="">
-      </button>
-      <div class="nav-links">
-        <div class="nav-link">
-          <button class="dropdown-btn">
-            Features <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow" />
-          </button>
-           <div class="dropdown-list"> 
-            <div class="dropdown-link"><a href="#" aria-label="todo-list"><img src="./assets/images/icon-todo.svg" alt="" />todo-list</a></div> 
-            <div class="dropdown-link"><a href="#" aria-label="calendar"><img src="./assets/images/icon-calendar.svg" alt="" />calendar</a></div>
-            <div class="dropdown-link"><a href="#" aria-label="reminders"><img src="./assets/images/icon-reminders.svg" alt="" />reminders</a></div>
-            <div class="dropdown-link"><a href="#" aria-label="planning"><img src="./assets/images/icon-planning.svg" alt="" />planning</a></div>
+
+    <div class="nav-links">
+
+      <div class="nav-link">
+       <button class="dropdown-btn link-open">
+          Features
+          <img
+            src="./assets/images/icon-arrow-down.svg"
+            alt=""
+            class="arrow"
+          />
+        </button>
+
+        <div class="dropdown-list">
+          <div class="dropdown-link">
+            <a href="#" aria-label="todo-list">
+              <img src="./assets/images/icon-todo.svg" alt="">
+              todo-list
+            </a>
+          </div>
+
+          <div class="dropdown-link">
+            <a href="#" aria-label="calendar">
+              <img src="./assets/images/icon-calendar.svg" alt="">
+              calendar
+            </a>
+          </div>
+
+          <div class="dropdown-link">
+            <a href="#" aria-label="reminders">
+              <img src="./assets/images/icon-reminders.svg" alt="">
+              reminders
+            </a>
+          </div>
+
+          <div class="dropdown-link">
+            <a href="#" aria-label="planning">
+              <img src="./assets/images/icon-planning.svg" alt="">
+              planning
+            </a>
           </div>
         </div>
-        <div class="nav-link">
-          <button class="dropdown-btn">
-            Company <img src="./assets/images/icon-arrow-down.svg" alt="" class="arrow" />
-          </button>
-           <div class="dropdown-list"> 
-            <div class="dropdown-link"><a href="#" aria-label="history">history</a></div>
-            <div class="dropdown-link"><a href="#" aria-label="our-team">our-team</a></div>
-            <div class="dropdown-link"><a href="#" aria-label="blog">blog</a></div>
+      </div>
+
+      <div class="nav-link">
+        <button class="dropdown-btn">
+          Company
+          <img
+            src="./assets/images/icon-arrow-down.svg"
+            alt=""
+            class="arrow"
+          />
+        </button>
+
+        <div class="dropdown-list">
+          <div class="dropdown-link">
+            <a href="#" aria-label="history">history</a>
+          </div>
+
+          <div class="dropdown-link">
+            <a href="#" aria-label="our-team">our-team</a>
+          </div>
+
+          <div class="dropdown-link">
+            <a href="#" aria-label="blog">blog</a>
           </div>
         </div>
-        <a href="#" class="nav-link">Careers</a>
-        <a href="#" class="nav-link">About</a>
       </div>
-      <div class="registration">
-        <button class="login">Login</button>
-        <button class="register">Register</button>
-      </div>
-    </nav>
-    <div class="overlay" id="overlay"></div> 
-  </header>
+
+      <a href="#" class="nav-link">Careers</a>
+      <a href="#" class="nav-link">About</a>
+
+    </div>
+
+    <div class="registration">
+      <button class="login">Login</button>
+      <button class="register">Register</button>
+    </div>
+
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+</header>
 
   <main>
     <picture class="main-picture">
