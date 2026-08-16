@@ -26,6 +26,9 @@ button {
   border: none;
 }
 
+/* =========================
+   HEADER
+========================= */
 
 .header {
   display: flex;
@@ -33,6 +36,7 @@ button {
   justify-content: space-between;
   padding: 1.5rem 1rem;
   position: relative;
+  z-index: 300;
 }
 
 .logo {
@@ -45,12 +49,13 @@ button {
   border: none;
 }
 
+/* =========================
+   MOBILE OVERLAY
+========================= */
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-
+  inset: 0;
   width: 100%;
   height: 100%;
 
@@ -60,7 +65,9 @@ button {
   visibility: hidden;
   pointer-events: none;
 
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 
   z-index: 100;
 }
@@ -71,13 +78,15 @@ button {
   pointer-events: auto;
 }
 
+/* =========================
+   MOBILE NAV
+========================= */
 
 .nav {
   position: fixed;
-
   top: 0;
   right: -70%;
-
+  
   width: 70%;
   height: 100vh;
 
@@ -85,25 +94,27 @@ button {
 
   padding: 5rem 1.5rem 2rem;
 
-  transition: right 0.3s ease;
-
- 
-  z-index: 200;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  transition: right 0.3s ease;
+
+  z-index: 200;
 }
 
 .nav.show {
   right: 0;
 }
 
+/* =========================
+   CLOSE MENU
+========================= */
+
 .close-menu {
   display: block;
 
   position: absolute;
-
   top: 1.5rem;
   right: 1.5rem;
 
@@ -113,10 +124,12 @@ button {
   z-index: 201;
 }
 
+/* =========================
+   OPEN MENU
+========================= */
 
 .open-menu {
   display: block;
-
   background: none;
   border: none;
 }
@@ -125,6 +138,9 @@ button {
   display: none;
 }
 
+/* =========================
+   NAV LINKS
+========================= */
 
 .nav-links {
   display: flex;
@@ -133,25 +149,24 @@ button {
 }
 
 .nav-link {
-  color: var(--medium-gray);
   position: relative;
+  color: var(--medium-gray);
 }
 
 .nav-link button {
-  color: var(--medium-gray);
-
   display: flex;
   align-items: center;
 
   gap: 0.5rem;
 
+  color: var(--medium-gray);
   font-size: 1rem;
 }
 
 a.nav-link {
-  text-decoration: none;
   color: var(--medium-gray);
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .nav-link button:hover,
@@ -159,24 +174,23 @@ a.nav-link:hover {
   color: var(--almost-black);
 }
 
+/* =========================
+   DROPDOWN
+========================= */
 
 .arrow {
   transition: transform 0.3s ease;
 }
 
-
 .dropdown-list {
   display: none;
 
   flex-direction: column;
-
   gap: 1rem;
 
   padding-left: 1.5rem;
-
   margin-top: 1rem;
 }
-
 
 .dropdown-btn.link-open {
   color: var(--almost-black);
@@ -187,21 +201,18 @@ a.nav-link:hover {
   transform: rotate(180deg);
 }
 
-
 .dropdown-btn.link-open + .dropdown-list {
   display: flex;
 }
 
-
 .dropdown-link a {
-  text-decoration: none;
-
-  color: var(--medium-gray);
-
   display: flex;
   align-items: center;
 
   gap: 0.8rem;
+
+  color: var(--medium-gray);
+  text-decoration: none;
 }
 
 .dropdown-link a:hover {
@@ -213,6 +224,10 @@ a.nav-link:hover {
   height: 16px;
 }
 
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
 .registration {
   display: flex;
   flex-direction: column;
@@ -221,14 +236,14 @@ a.nav-link:hover {
 
 .login,
 .register {
+  padding: 0.8rem;
+
   background: none;
   border: none;
 
-  padding: 0.8rem;
+  color: var(--medium-gray);
 
   font-size: 1rem;
-
-  color: var(--medium-gray);
 }
 
 .login:hover,
@@ -245,18 +260,22 @@ a.nav-link:hover {
   border-color: var(--almost-black);
 }
 
+/* =========================
+   MAIN
+========================= */
 
 main {
   display: flex;
   flex-direction: column;
 
-  text-align: center;
-
   padding: 1rem;
+
+  text-align: center;
 }
 
 .main-picture img {
   width: 100%;
+  display: block;
 }
 
 .text-content {
@@ -264,29 +283,26 @@ main {
 }
 
 .text-content h1 {
-  font-size: 2.2rem;
-
   margin-bottom: 1rem;
 
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
 .text-content p {
-  color: var(--medium-gray);
-
-  line-height: 1.6;
-
   margin-bottom: 1.5rem;
+
+  color: var(--medium-gray);
+  line-height: 1.6;
 }
 
 .cta {
+  padding: 0.8rem 1.5rem;
+
   background: var(--almost-black);
   color: var(--almost-white);
 
   border: 2px solid var(--almost-black);
-
-  padding: 0.8rem 1.5rem;
-
   border-radius: 12px;
 
   font-weight: 700;
@@ -297,15 +313,18 @@ main {
   color: var(--almost-black);
 }
 
+/* =========================
+   CLIENTS
+========================= */
+
 .clients {
   display: flex;
-
-  justify-content: space-between;
   align-items: center;
-
-  margin-top: 3rem;
+  justify-content: space-between;
 
   gap: 1rem;
+
+  margin-top: 3rem;
 
   flex-wrap: wrap;
 }
@@ -314,14 +333,20 @@ main {
   height: 18px;
 }
 
-.attribution {
-  text-align: center;
+/* =========================
+   ATTRIBUTION
+========================= */
 
+.attribution {
   padding: 1rem;
 
+  text-align: center;
   font-size: 0.8rem;
 }
 
+/* =========================
+   DESKTOP
+========================= */
 
 @media (min-width: 768px) {
 
@@ -329,70 +354,65 @@ main {
     padding: 2rem 2.5rem;
 
     justify-content: flex-start;
-
     gap: 3rem;
   }
 
+  /* Hide mobile controls */
   .open-menu,
   .close-menu,
   .overlay {
     display: none;
   }
 
+  /* Desktop navigation */
   .nav {
     position: static;
-
-    right: auto;
 
     width: auto;
     height: auto;
 
-    background: transparent;
-
     padding: 0;
 
+    background: transparent;
+
+    display: flex;
     flex-direction: row;
 
     gap: 2rem;
 
     flex: 1;
-
-    z-index: auto;
   }
 
   .nav-links {
+    display: flex;
     flex-direction: row;
 
     gap: 2.5rem;
   }
 
-
-
+  /* Desktop dropdown */
   .dropdown-list {
     position: absolute;
 
-    background: white;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-    border-radius: 10px;
-
-    padding: 1.5rem;
-
-    margin-top: 1rem;
-
-    display: none;
+    left: 0;
 
     min-width: 150px;
 
-    left: 0;
-  }
+    margin-top: 1rem;
+    padding: 1.5rem;
 
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
 
   .dropdown-btn.link-open + .dropdown-list {
     display: flex;
   }
 
+  /* Registration */
   .registration {
     flex-direction: row;
 
@@ -401,12 +421,11 @@ main {
     gap: 2rem;
   }
 
-
-
+  /* Main */
   main {
     flex-direction: row-reverse;
 
-    text-align: left;
+    align-items: center;
 
     max-width: 1200px;
 
@@ -416,7 +435,7 @@ main {
 
     gap: 5rem;
 
-    align-items: center;
+    text-align: left;
   }
 
   .text-content h1 {
