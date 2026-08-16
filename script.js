@@ -19,18 +19,10 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('show');
 });
 
-// Dropdown toggle - ONLY 1 VERSION OF THIS
+// Dropdown toggle - simple toggle only
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // prevent closing mobile menu
-    const navLink = btn.closest('.nav-link');
-    
-    // close other dropdowns first
-    document.querySelectorAll('.nav-link').forEach(link => {
-      if(link !== navLink) link.classList.remove('link-open');
-    });
-    
-    // toggle this one
-    navLink.classList.toggle('link-open');
+    e.stopPropagation();
+    btn.closest('.nav-link').classList.toggle('link-open');
   });
 });
