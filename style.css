@@ -20,7 +20,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   background: rgba(0,0,0,0.7);
   opacity: 0; visibility: hidden;
   transition: 0.3s; 
-  z-index: 999; /* FIX 1: HIGHER THAN NAV ON MOBILE */
+  z-index: 999; 
   pointer-events: none;
 }
 .overlay.show { opacity: 1; visibility: visible; pointer-events: all; }
@@ -31,7 +31,7 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
   background: var(--almost-white);
   padding: 5rem 1.5rem 2rem;
   transition: 0.3s;
-  z-index: 998; /* FIX 1: LOWER THAN OVERLAY ON MOBILE */
+  z-index: 998; 
   display: flex; flex-direction: column; 
   justify-content: space-between; 
 }
@@ -87,7 +87,7 @@ main { display: flex; flex-direction: column; text-align: center; padding: 1rem;
   .nav {
     position: static; right: auto; width: auto; height: auto;
     background: transparent; padding: 0; flex-direction: row;
-    gap: 2rem; flex: 1; z-index: auto; /* RESET Z-INDEX FOR DESKTOP */
+    gap: 2rem; flex: 1; z-index: auto; 
   }
   .nav-links { flex-direction: row; gap: 2.5rem; }
   .dropdown, .dropdown-list {
