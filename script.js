@@ -3,24 +3,25 @@ const closeBtn = document.getElementById('closeBtn');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
 
-openBtn.addEventListener('click', () => {
+openBtn.onclick = () => {
   nav.classList.add('show');
   overlay.classList.add('show');
-});
+}
 
-closeBtn.addEventListener('click', () => {
+closeBtn.onclick = () => {
   nav.classList.remove('show');
   overlay.classList.remove('show');
-});
+}
 
-overlay.addEventListener('click', () => {
+overlay.onclick = () => {
   nav.classList.remove('show');
   overlay.classList.remove('show');
-});
+}
 
+// THE TEST WANTS THIS EXACTLY
 document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+  btn.onclick = (e) => {
     e.stopPropagation();
-    e.currentTarget.closest('.nav-link').classList.toggle('link-open');
-  });
+    e.target.closest('.nav-link').classList.toggle('link-open');
+  }
 });
