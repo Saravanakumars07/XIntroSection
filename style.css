@@ -65,11 +65,11 @@ button {
 .nav.show { 
   right: 0;
 }
-
-.close-menu { 
+.close-menu {
+  display: none;
   position: fixed; 
   top: 1.5rem; right: 1rem; 
-  z-index: 1001; /* HIGHEST */
+  z-index: 1001;
 }
 
 .nav-links { 
@@ -221,20 +221,35 @@ main {
      }
   
   .nav {
-    position: static; right: auto; width: auto; height: auto;
-    background: transparent; padding: 0; flex-direction: row;
+    position: static; 
+    right: auto; 
+    width: auto;
+     height: auto;
+    background: transparent;
+     padding: 0; 
+     flex-direction: row;
     gap: 2rem; flex: 1;
     z-index: auto;
   }
-  .nav-links { flex-direction: row; gap: 2.5rem; }
+  .nav-links { 
+    flex-direction: row;
+     gap: 2.5rem; 
+    }
 
   .dropdown {
-    position: absolute; background: white;
+    position: absolute;
+    background: white;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 10px; padding: 1.5rem; margin-top: 1rem;
-    display: none; min-width: 150px; left: 0;
+    border-radius: 10px; 
+    padding: 1.5rem; 
+    margin-top: 1rem;
+    display: none; 
+    min-width: 150px;
+     left: 0;
   }
-  .nav-link:hover .dropdown { display: flex; }
+  .nav-link:hover .dropdown { 
+    display: flex;
+   }
 
   .registration { 
     flex-direction: row;
