@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const parent = btn.parentElement; // .nav-link
-      parent.classList.toggle('link-open');
-       btn.parentElement.classList.toggle('link-open'); 
+      const parentNavLink = btn.closest('.nav-link'); // FIX: use closest
+      parentNavLink.classList.toggle('link-open');
     });
   });
 });
