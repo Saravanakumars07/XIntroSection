@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      btn.closest('.nav-link').classList.toggle('link-open');
+      const navLink = btn.closest('.nav-link');
+      const isOpen = navLink.classList.contains('link-open');
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('link-open'));
+      if(!isOpen) navLink.classList.add('link-open');
     });
   });
 })
