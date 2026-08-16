@@ -16,7 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   document.getElementById('closeBtn').onclick = closeMenu;
   overlay.onclick = closeMenu;
-
+  
+document.querySelectorAll('.dropdown-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.parentElement.classList.toggle('link-open');
+  });
+});
   document.querySelectorAll('.dropdown-btn').forEach(btn => {
     btn.onclick = function(e) {
       e.stopPropagation();
