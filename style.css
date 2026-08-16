@@ -40,10 +40,9 @@ button { cursor: pointer; font-family: inherit; background: none; border: none; 
 
 .close-menu { 
   display: none; 
-  position: fixed; /* FIXED so it's above overlay */
+  position: fixed;
   top: 1.5rem; right: 1.5rem; 
-  z-index: 1000; /* TOP */
-}
+  z-index: 1000; }
 .nav.show .close-menu { display: block; }
 
 .nav-links { display: flex; flex-direction: column; gap: 1.5rem; }

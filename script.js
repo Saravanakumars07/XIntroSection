@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle dropdowns
   dropdownBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault(); // Crio tests need this
+      e.preventDefault();
       const parentNavLink = btn.closest('.nav-link'); 
       
       // Close other open dropdowns first
